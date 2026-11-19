@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    /* Default Warehouse Obsidian palette tokens */
+    --pg-canvas: #0B0C10;
+    --pg-surface: #111318;
+    --pg-panel: #151820;
+    --pg-module: #181C24;
+    --pg-module-hover: #1E232D;
+    --pg-border: #242936;
+    --pg-border-strong: #343B4D;
+    --pg-grid-dot: #262B38;
+    --pg-text: #ECEEF2;
+    --pg-text-muted: #8D95A5;
+    --pg-text-dim: #596070;
+    --pg-primary: #F5A623;
+    --pg-primary-text: #0B0C10;
+    --pg-secondary: #2AD488;
+    --pg-tertiary: #42A5A5;
+    --pg-quaternary: #9D78F5;
+    --pg-alert: #F43F5E;
+  }
+
+  html, body {
+    font-family: var(--font-sans);
+    background-color: var(--pg-canvas);
+    color: var(--pg-text);
+    overscroll-behavior: none;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Studio dot-grid canvas background matching modular patch grid */
+.pg-dot-grid {
+  background-color: var(--pg-canvas);
+  background-image: radial-gradient(circle, var(--pg-grid-dot) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+/* Custom studio scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pg-border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pg-text-dim);
+}
+
+/* Prevent browser touch gestures inside interactive synth controls */
+.touch-surface {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}

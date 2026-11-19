@@ -1,0 +1,6 @@
+{
+  "name": "PatchGrid — Modular Synthesizer UI & MIDI Surface Studio",
+  "description": "Design custom touch synthesizer interfaces, drag-and-drop modular controllers, and configure live MIDI routing for DAW and electronic music performances.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
